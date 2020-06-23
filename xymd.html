@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    form,
+    img,
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    p,
+    tr,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    em,
+    i {
+        font-style: normal;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+        font-weight: normal;
+    }
+    
+    img {
+        border: 0;
+        vertical-align: top;
+    }
+    
+    a {
+        color: #777986;
+        text-decoration: none;
+        outline: none;
+    }
+    
+    .subject {
+        width: 100%;
+    }
+    
+    .header {
+        width: 100%;
+        height: 883px;
+        background: url(img/head.jpg) no-repeat;
+    }
+    
+    .middle {
+        width: 100%;
+        height: 1078px;
+        background: url(img/cont1.jpg) no-repeat;
+    }
+    
+    .middle .core {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .middle .core .core-h2 {
+        width: 740px;
+        height: 136px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: url(img/act-spr.png) no-repeat;
+        background-position: 0 0;
+        animation: big 1.5s ease infinite;
+    }
+    
+    .middle .core .task {
+        text-align: center;
+        color: #fff;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    
+    .middle .core .list {
+        width: 1000px;
+        height: 679px;
+        margin: 18px auto 0;
+    }
+    
+    .list {
+        position: relative;
+        width: 322px;
+        height: 329px;
+    }
+    
+    .list .lis {
+        position: relative;
+        float: left;
+        width: 322px;
+        height: 329px;
+        background: url(img/key_bg.png) no-repeat;
+        margin-right: 15px;
+        margin-bottom: 21px;
+    }
+    
+    .list .lis:nth-child(3n) {
+        margin-right: 0;
+    }
+    
+    .list .lis:nth-child(4),
+    .list .lis:nth-child(5),
+    .list .lis:nth-child(6) {
+        margin-bottom: 0;
+    }
+    
+    .list .lis .participation {
+        text-align: center;
+        font-size: 20px;
+        color: #000;
+        margin-top: 78px;
+    }
+    
+    .list .lis .key {
+        font-size: 32px;
+        color: #000000;
+        font-weight: bold;
+        position: absolute;
+        top: 155px;
+        left: 70px;
+    }
+    
+    .list .lis .get {
+        position: absolute;
+        display: block;
+        width: 183px;
+        height: 49px;
+        top: 244px;
+        left: 70px;
+        overflow: hidden;
+        background: url(img/act-spr.png) no-repeat;
+        background-position: 0 -169px;
+        animation: big 1s ease-in infinite;
+    }
+    
+    @keyframes big1 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+    
+    @keyframes big {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.2);
+        }
+    }
+    
+    .share {
+        width: 1000px;
+        height: 216px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .share .share-left {
+        float: left;
+        width: 630px;
+        height: 216px;
+    }
+    
+    .share-left .text {
+        text-align: left;
+        color: #770019;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    
+    .share-left input {
+        display: block;
+        width: 620px;
+        height: 45px;
+        background-color: #cc4768;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #fff;
+        margin-top: 12px;
+    }
+    
+    .share-left span {
+        display: block;
+        text-align: left;
+        padding-top: 12px;
+        font-size: 16px;
+        color: #fff;
+    }
+    
+    .share-right {
+        width: 360px;
+        height: 216px;
+        float: right;
+    }
+    
+    .share-right p {
+        text-align: center;
+        font-size: 18px;
+        padding-top: 45px;
+        color: #770019;
+        font-weight: bold;
+    }
+    
+    .share-right a {
+        display: block;
+        width: 183px;
+        height: 49px;
+        margin: 25px auto 0;
+        background: url(img/act-spr.png) no-repeat;
+        background-position: 0 -169px;
+        transition: all 0.5s;
+    }
+    
+    .share-right a:hover {
+        transform: scale(1.1);
+    }
+    
+    .rear {
+        width: 100%;
+        height: 1938px;
+        background: url(img/cont2.jpg) no-repeat;
+    }
+    
+    .rear .cont {
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .rear-top {
+        width: 1000px;
+        height: 938px;
+    }
+    
+    .rear-top .rear-top-h2 {
+        width: 740px;
+        height: 136px;
+        background: url(img/act-spr.png) no-repeat;
+        margin: 0 auto;
+        background-position: 0 -269px;
+    }
+    
+    .rear-top .p-1 {
+        text-align: center;
+        font-size: 24px;
+        color: #610b27;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .rear-top .p-2 {
+        text-align: center;
+        font-size: 16px;
+        color: #610b27;
+        margin-top: 10px;
+    }
+    
+    .rear-top .p-3 {
+        text-align: center;
+        font-size: 16px;
+        color: #610b27;
+        margin-top: 10px;
+    }
+    
+    .rear-top img {
+        display: block;
+        width: 302px;
+        height: 233px;
+        margin: 145px auto 0;
+        animation: an 0.5s ease-in infinite;
+    }
+    
+    @keyframes an {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+    
+    .rear-top a {
+        display: block;
+        width: 287px;
+        height: 67px;
+        margin: 185px auto 0;
+        background: url(img/act-spr.png) no-repeat;
+        background-position: 0 -480px;
+    }
+    
+    .rear-bottom {
+        width: 1000px;
+        height: 1000px;
+    }
+    
+    .rear-bottom h2 {
+        width: 740px;
+        height: 136px;
+        margin: 0 auto;
+        background: url(img/act-spr.png) no-repeat;
+        background-position: 0 -575px;
+    }
+    
+    .rear-bottom li {
+        text-align: left;
+        font-size: 26px;
+        margin-bottom: 40px;
+        color: #fff;
+    }
+    
+    .rear-bottom .lis {
+        margin-top: 45px;
+    }
+</style>
+
+<body>
+
+    <div class="subject">
+        <div class="header">
+        </div>
+        <div class="middle">
+            <div class="core">
+                <h2 class="core-h2"></h2>
+                <p class="task">活动期间，当日24:00前完成下列指定任务，可在次日10:00后领取觅心之钥，获得的觅心之钥可用于开启蜜宝箱获得奖励哦。</p>
+                <ul class="list">
+                    <li class="lis">
+                        <p class="participation">参与一次钓鱼</p>
+                        <p class="key">觅心之钥+4</p>
+                        <a href="#" class="get"></a>
+                    </li>
+                    <li class="lis">
+                        <p class="participation">完成无尽塔三胜</p>
+                        <p class="key">觅心之钥+4</p>
+                        <a href="#" class="get"></a>
+                    </li>
+                    <li class="lis">
+                        <p class="participation">完成太初王座副本<br> 斩首任务1次
+                        </p>
+                        <p class="key">觅心之钥+6</p>
+                        <a href="#" class="get"></a>
+                    </li>
+                    <li class="lis">
+                        <p class="participation">完成6个每日挑战</p>
+                        <p class="key">觅心之钥+9</p>
+                        <a href="#" class="get"></a>
+                    </li>
+                    <li class="lis">
+                        <p class="participation">获得洪门经验值2,000,000 或<br> 侠义团声望 100,000</p>
+                        <p class="key">觅心之钥+5</p>
+                        <a href="#" class="get"></a>
+                    </li>
+                    <li class="lis">
+                        <p class="participation">领取在线奖励2小时道具奖励<br> （当天完成次日领取）
+                        </p>
+                        <p class="key">觅心之钥+4</p>
+                        <a href="#" class="get"></a>
+                    </li>
+                </ul>
+                <div class="share">
+                    <div class="share-left">
+                        <p class="text">活动期间，每邀请1名玩家进入该页面（需绑定角色），即可获得2把觅心之钥， 最多可以邀请5名玩家获得10把觅心之钥，每个QQ仅可被邀请一次。
+                        </p>
+                        <input type="text">
+                        <span>复制专属链接发送给好友吧！</span>
+                    </div>
+                    <div class="share-right">
+                        <p>已邀请 0 名玩家</p>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="rear">
+            <div class="cont">
+                <div class="rear-top">
+                    <h2 class="rear-top-h2"></h2>
+                    <p class="p-1">当前第？轮</p>
+                    <p class="p-2">开启本轮蜜宝箱需要 ？ 把幸运之钥。</p>
+                    <p class="p-3">当前拥有幸运之钥： 0</p>
+                    <img src="img/chest-img.png" alt="">
+                    <a href="#"></a>
+                </div>
+                <ul class="rear-bottom">
+                    <h2></h2>
+                    <li class="lis">1、活动时间（奖励选择时间）：2020年6月11日~6月29日，奖励（蜜钥）领取截止时间：2020年6月30日；</li>
+                    <li> 2、活动期间内，当日24:00前完成指定任务可在次日10:00后领取相应数量的觅心 之钥；
+                    </li>
+                    <li> 3、活动期间内，发送自己的专属链接邀请其他玩家进入本活动页面即可获得觅心 之钥，最多邀请5名玩家获得10把觅心之钥，被邀请的玩家等级必须≥60级，每个 QQ仅可被邀请一次；
+                    </li>
+                    <li>4、活动期间内，选择并提交蜜宝奖励后无法进行更改；</li>
+                    <li>5、蜜宝共计12轮，完成12轮必得所有奖励；</li>
+                    <li> 6、本活动奖励无法领取至UP火箭区的角色。</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="39px" viewBox="0 0 56 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.8298 27.5799 0.8298 27.5799 26.9998 0 26.9998"></polygon>
+        <polygon id="path-3" points="0.0001 0.16 24.2001 0.16 24.2001 24.5699 0.0001 24.5699"></polygon>
+        <polygon id="path-5" points="0 0.8298 11.2199 0.8298 11.2199 12.5698 0 12.5698"></polygon>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-13.000000, -9.000000)">
+            <g id="编组" transform="translate(13.000000, 8.000000)">
+                <polygon id="Fill-11" fill="#E37263" points="55.1601 13.6698 27.5801 28.0998 27.5801 39.8398 55.1601 25.4098"></polygon>
+                <polygon id="Fill-13" fill="#E37263" points="37.7602 4.56 27.5802 9.88 27.5802 21.62 37.7602 16.3 55.1602 25.41 55.1602 13.66"></polygon>
+                <g transform="translate(0.000000, 12.840000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-16"></g>
+                    <polygon id="Fill-15" fill="#6470B4" mask="url(#mask-2)" points="-0.0001 0.8298 27.5799 15.2598 27.5799 26.9998 -0.0001 12.5698"></polygon>
+                </g>
+                <g transform="translate(0.000000, 0.840000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-18"></g>
+                    <polygon id="Fill-17" fill="#6470B4" mask="url(#mask-4)" points="24.2001 0.1599 0.0001 12.8199 0.0001 24.5699 24.2001 11.8999"></polygon>
+                </g>
+                <polygon id="Fill-19" fill="#DC4D37" points="55.1601 25.4096 55.1601 13.6696 43.9401 19.5396"></polygon>
+                <g transform="translate(0.000000, 12.840000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="Clip-22"></g>
+                    <polygon id="Fill-21" fill="#3E53A3" mask="url(#mask-6)" points="-0.0001 0.8298 -0.0001 12.5698 11.2199 6.6998"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

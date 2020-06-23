@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    form,
+    img,
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    p,
+    tr,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    em,
+    i {
+        font-style: normal;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+        font-weight: normal;
+    }
+    
+    img {
+        border: 0;
+        vertical-align: top;
+    }
+    
+    a {
+        color: #777986;
+        text-decoration: none;
+        outline: none;
+    }
+    
+    .header {
+        width: 100%;
+        height: 79px;
+        background-color: #262D36;
+        overflow: hidden;
+    }
+    
+    .header .spr {
+        display: flex;
+        justify-content: center;
+        perspective: 500px;
+    }
+    
+    .header .spr h3 {
+        width: 0px;
+        height: 50px;
+        line-height: 50px;
+        margin-top: 13px;
+        overflow: hidden;
+        color: #f0ddaa;
+        font-size: 22px;
+        animation: w 2.5s steps(14) forwards;
+    }
+    
+    @keyframes w {
+        100% {
+            width: 220px;
+        }
+    }
+    
+    .header .spr .logo {
+        width: 133px;
+        height: 77px;
+        background: url(img/spr.png) no-repeat;
+        background-position: 0 -233px;
+        transform-style: preserve-3d;
+        transition: all 0.3s;
+    }
+    
+    .header .spr .logo:hover {
+        transform: scale(1, 1.2) rotateY(-360deg);
+    }
+    
+    .header .spr .uccn {
+        width: 194px;
+        height: 77px;
+        background: url(img/spr.png) no-repeat;
+        background-position: 0 -79px;
+        animation: dd 1s ease 2.5s infinite;
+    }
+    
+    @keyframes dd {
+        100% {
+            transform: scale(1.1);
+        }
+    }
+    
+    .content {
+        width: 100%;
+        height: 3533px;
+        background: url(img/bg.jpg) center top no-repeat;
+        position: relative;
+    }
+    
+    .head {
+        width: 100%;
+        height: 1606px;
+    }
+    
+    .content .mia {
+        position: relative;
+        margin: 0 auto;
+        width: 1000px;
+    }
+    
+    .navBox {
+        width: 730px;
+        height: 405px;
+        position: absolute;
+        top: 693px;
+        left: 50%;
+        z-index: 2;
+        margin-left: -365px;
+    }
+    
+    .navBox a {
+        float: left;
+    }
+    
+    .content .mia .navBox .i {
+        display: block;
+        width: 82px;
+        height: 27px;
+        position: absolute;
+        left: 23px;
+        top: 307px;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: -146px 0;
+        transition: all 0.5s;
+    }
+    
+    .content .mia .navBox .i:hover {
+        transform: scale(1.3);
+    }
+    
+    .content .mia .navBox a {
+        position: relative;
+        display: inline-block;
+        height: 355px;
+        width: 127px;
+        background: url(img/wp-spr.png) no-repeat;
+        margin-left: 15px;
+    }
+    
+    .content .mia .navBox a:nth-child(1) {
+        background-position: -1px -189px;
+        animation: anima3 3.7s ease-in-out 0s alternate infinite;
+    }
+    
+    .content .mia .navBox a:nth-child(2) {
+        background-position: -146px -139px;
+        margin-top: 50px;
+        animation: anima2 2.7s ease-in-out 0s alternate infinite;
+    }
+    
+    .content .mia .navBox a:nth-child(3) {
+        background-position: -291px -189px;
+        animation: anima3 3.7s ease-in-out 0s alternate infinite;
+    }
+    
+    .content .mia .navBox a:nth-child(4) {
+        background-position: -436px -139px;
+        margin-top: 50px;
+        animation: anima2 2.7s ease-in-out 0s alternate infinite;
+    }
+    
+    .content .mia .navBox a:nth-child(5) {
+        background-position: -581px -189px;
+        animation: anima3 3.7s ease-in-out 0s alternate infinite;
+    }
+    
+    .content .mia img {
+        width: 286px;
+        height: 610px;
+        display: block;
+        position: absolute;
+        left: 404px;
+        top: 38px;
+    }
+    
+    .content .mia .rocket {
+        display: block;
+        width: 1000px;
+        height: 399px;
+        position: absolute;
+        top: 1207px;
+        left: 0;
+    }
+    
+    .content .mia .rocket .cont {
+        width: 435px;
+        height: 104px;
+        margin-top: 221px;
+        margin-left: 437px;
+    }
+    
+    .content .mia .rocket .cont .cont-left {
+        width: 231px;
+        height: 104px;
+        float: left;
+    }
+    
+    .content .mia .rocket .cont .cont-left p {
+        display: block;
+        width: 231px;
+        height: 57px;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: -291px 0;
+        transition: all 0.8s;
+    }
+    
+    .content .mia .rocket .cont .cont-left p:hover {
+        transform: scale(1.2);
+    }
+    
+    .content .mia .rocket .cont .cont-left span {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: #fff5dd;
+    }
+    
+    .content .mia .rocket .cont .cont-right {
+        width: 202px;
+        height: 104px;
+        float: right;
+    }
+    
+    .premium li {
+        display: inline-block;
+        background: url(img/wp-spr.png) no-repeat;
+        width: 83px;
+        height: 78px;
+        background-position: -581px 0;
+        margin-left: 17px;
+        transition: all 0.8s;
+        animation: move 0.8s ease infinite;
+    }
+    
+    @keyframes move {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.4);
+        }
+    }
+    
+    .content .mia .left img {
+        width: 883px;
+        height: 816px;
+        position: absolute;
+        left: 50%;
+        top: 22px;
+        margin-left: -960px;
+        animation: anima1 2s linear infinite alternate forwards;
+    }
+    
+    .content .mia .right img {
+        position: absolute;
+        width: 749px;
+        height: 1180px;
+        top: 0;
+        left: 50%;
+        margin-left: 185px;
+        animation: anima1 1.5s linear infinite alternate forwards;
+    }
+    
+    @keyframes anima1 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(10px, 10px);
+        }
+    }
+    
+    @keyframes anima2 {
+        0% {
+            transform: rotate(1deg);
+        }
+        100% {
+            transform: rotate(-1deg);
+        }
+    }
+    
+    @keyframes anima3 {
+        0% {
+            transform: rotate(2deg);
+        }
+        100% {
+            transform: rotate(-2deg);
+        }
+    }
+    
+    .gift-bag {
+        width: 100%;
+        height: 1404px;
+    }
+    
+    .gift-bag .mia .big-bag {
+        width: 1000px;
+        height: 425px;
+    }
+    
+    .txt {
+        display: block;
+        width: 705px;
+        height: 67px;
+        margin: 63px auto 0;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: 0 -610px;
+        animation: ddd 1s ease-in infinite;
+    }
+    
+    @keyframes ddd {
+        100% {
+            transform: scale(1.1);
+        }
+    }
+    
+    .big-bag-left {
+        width: 330px;
+        height: 425px;
+        float: left;
+    }
+    
+    .big-bag-left .box1 i {
+        display: block;
+        width: 154px;
+        height: 34px;
+        margin: 98px auto 0;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: 0 -709px;
+    }
+    
+    .common h4 {
+        text-align: center;
+        font-size: 28px;
+        background-image: -webkit-linear-gradient(top, #fefadb, #f4d595);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-weight: bold;
+    }
+    
+    .big-bag-right .box2 h4 {
+        margin-top: 135px;
+    }
+    
+    .common p {
+        text-align: center;
+        font-size: 16px;
+        color: #cedbff;
+        margin-top: 5px;
+    }
+    
+    .common a {
+        display: block;
+        width: 173px;
+        height: 49px;
+        margin: 10px auto 0;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: -726px -610px;
+        transition: all 0.5s;
+    }
+    
+    .common a:hover {
+        transform: scale(1.1);
+    }
+    
+    .big-bag-right {
+        width: 330px;
+        height: 425px;
+        float: right;
+        margin-right: 133px;
+    }
+    
+    .page-gift {
+        width: 1000px;
+        height: 915px;
+    }
+    
+    .gift-model {
+        width: 290px;
+        height: 380px;
+        float: left;
+        margin-right: 63px;
+        position: relative;
+        margin-bottom: 60px;
+    }
+    
+    .gift-model:nth-child(3n) {
+        margin-right: 0;
+    }
+    
+    .list {
+        width: 290px;
+        height: 341px;
+        background: url(img/gift-bg.png) no-repeat;
+    }
+    
+    .list .logo-member {
+        display: block;
+        width: 113px;
+        height: 40px;
+        position: absolute;
+        background: url(img/wp-spr.png) no-repeat;
+        top: 9px;
+        left: 89px;
+        background-position: 0 -752px;
+    }
+    
+    .list ul {
+        width: 188px;
+        height: 272px;
+        text-align: center;
+        font-size: 0;
+        margin-left: 51px;
+        padding-top: 61px;
+    }
+    
+    .list ul li {
+        width: 78px;
+        height: 130px;
+        float: left;
+    }
+    
+    .list ul li:nth-child(2n) {
+        margin-left: 32px;
+    }
+    
+    .prop-bg {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .prop-bg .prop-bg-1 {
+        display: block;
+        width: 64px;
+        height: 64px;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: 0 -802px;
+        margin-top: 15px;
+        margin-left: 7px;
+        animation: move2 1.5s ease infinite;
+    }
+    
+    @keyframes move2 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+    
+    .list ul li p {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+        color: #b1cdff;
+        line-height: 18px;
+    }
+    
+    .btnBox {
+        width: 100%;
+        height: 39px;
+        margin-top: 9px;
+    }
+    
+    .btnBox .btn-left {
+        float: left;
+        width: 138px;
+        height: 30px;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: -228px -709px;
+    }
+    
+    .btnBox .btn-right {
+        float: right;
+        width: 138px;
+        height: 30px;
+        background: url(img/wp-spr.png) no-repeat;
+        background-position: -228px -752px;
+    }
+    
+    .btn-left:hover {
+        transform: scale(1.1);
+    }
+    
+    .btn-right:hover {
+        transform: scale(1.1);
+    }
+    
+    .bottom {
+        width: 100%;
+        height: 357px;
+    }
+    
+    .bottom h2 {
+        background: url(img/wp-spr.png) no-repeat;
+        width: 705px;
+        height: 67px;
+        margin: 100px auto 0;
+        background-position: 0 -978px;
+    }
+    
+    .bottom .text-1 {
+        text-align: center;
+        font-size: 20px;
+        color: #f0ddaa;
+        margin-top: 60px;
+        animation: move3 2.5s ease infinite;
+    }
+    
+    .bottom .text-2 {
+        text-align: center;
+        font-size: 20px;
+        color: #f0ddaa;
+        margin-top: 40px;
+        animation: move3 2.5s ease infinite;
+    }
+    
+    .bottom .name {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+        color: #f0ddaa;
+    }
+    
+    @keyframes move3 {
+        0% {
+            font-size: 20px;
+        }
+        100% {
+            font-size: 25px;
+        }
+    }
+</style>
+
+<body>
+    <div class="header">
+        <div class="spr">
+            <h3>欢迎 Me H5 Projects</h3>
+            <h1 class="logo"></h1>
+            <a href="#" class="uccn"></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="head">
+            <div class="mia">
+                <img src="img/slg.png" alt="">
+                <div class="navBox">
+                    <a href="#" class="wrp"><i class="i"></i></a>
+                    <a href="#" class="wrp"><i class="i"></i></a>
+                    <a href="#" class="wrp"><i class="i"></i></a>
+                    <a href="xymd.html" class="wrp"><i class="i"></i></a>
+                    <a href="fycf.html" class="wrp"><i class="i"></i></a>
+                </div>
+                <a href="#" class="rocket">
+                    <div class="cont">
+                        <div class="cont-left">
+                            <p></p>
+                            <span>加入就送超级豪礼</span>
+                        </div>
+                        <div class="cont-right">
+                            <ul class="premium">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                <div class="left"><img src="img/n_left.png" alt=""></div>
+                <div class="right"><img src="img/n_right.png" alt=""></div>
+            </div>
+        </div>
+        <div class="gift-bag">
+            <div class="mia">
+                <h2 class="txt"></h2>
+                <div class="big-bag">
+                    <div class="big-bag-left">
+                        <div class="box1 common">
+                            <i></i>
+                            <h4>新手礼包</h4>
+                            <p>6月11日起注册使用WEGAME<br> 登录剑灵的新用户可领取
+                            </p>
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                    <div class="big-bag-right">
+                        <div class="box2 common">
+                            <h4>洪门幸运礼</h4>
+                            <p>超级幸运星用户在活动期间<br> 通过WeGame登录剑灵可领取
+                            </p>
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-gift">
+                    <div class="gift-model">
+                        <div class="list">
+                            <i class="logo-member"></i>
+                            <ul>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btnBox">
+                            <a href="#" class="btn-left"></a>
+                            <a href="#" class="btn-right"></a>
+                        </div>
+                    </div>
+                    <div class="gift-model">
+                        <div class="list">
+                            <i class="logo-member"></i>
+                            <ul>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btnBox">
+                            <a href="#" class="btn-left"></a>
+                            <a href="#" class="btn-right"></a>
+                        </div>
+                    </div>
+                    <div class="gift-model">
+                        <div class="list">
+                            <i class="logo-member"></i>
+                            <ul>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btnBox">
+                            <a href="#" class="btn-left"></a>
+                            <a href="#" class="btn-right"></a>
+                        </div>
+                    </div>
+                    <div class="gift-model">
+                        <div class="list">
+                            <i class="logo-member"></i>
+                            <ul>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btnBox">
+                            <a href="#" class="btn-left"></a>
+                            <a href="#" class="btn-right"></a>
+                        </div>
+                    </div>
+                    <div class="gift-model">
+                        <div class="list">
+                            <i class="logo-member"></i>
+                            <ul>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btnBox">
+                            <a href="#" class="btn-left"></a>
+                            <a href="#" class="btn-right"></a>
+                        </div>
+                    </div>
+                    <div class="gift-model">
+                        <div class="list">
+                            <i class="logo-member"></i>
+                            <ul>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="prop-bg">
+                                        <i class="prop-bg-1"></i>
+                                    </div>
+                                    <p>炽热白青<br> 封印符×2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btnBox">
+                            <a href="#" class="btn-left"></a>
+                            <a href="#" class="btn-right"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="bottom">
+            <h2></h2>
+            <p class="text-1">WEGAME：6月11日起注册使用WEGAME登录剑灵的新用户可领取</p>
+            <p class="text-2">QQ网吧：活动期间在QQ网吧登录剑灵即可领取礼包，单Q限领一次</p>
+            <h3 class="name">王海军</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
